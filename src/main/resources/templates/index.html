@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <link th:href="@{/css/styling.css}" rel="stylesheet">
+</head>
+
+
+<body>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">age</th>
+        <th scope="col">etat_civil</th>
+        <th scope="col">nom</th>
+        <th scope="col">prenom</th>
+        <th scope="col">sex</th>
+        <th scope="col">username</th>
+        <th scope="col">actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="client:${clients}">
+        <td th:text="${client.getId()}"></td>
+        <td th:text="${client.getAge()}"></td>
+        <td th:text="${client.getEtatCivil()}"></td>
+        <td th:text="${client.getNom()}"></td>
+        <td th:text="${client.getPrenom()}"></td>
+        <td th:text="${client.getSexe()}"></td>
+        <td th:text="${client.getUsername()}"></td>
+        <td>
+            <a type="button" th:href="@{delete/{id}(id=${client.getId()})}">Delete</a>
+        </td>
+
+
+    </tr>
+    </tbody>
+</table>
+</body>
+
+
+
+
+</html>
